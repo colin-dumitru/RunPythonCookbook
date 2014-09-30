@@ -1,7 +1,3 @@
-package 'python2.7' do
-  action :install
-end
-
 directory "/opt/worker" do
     mode 0755
     action :create
