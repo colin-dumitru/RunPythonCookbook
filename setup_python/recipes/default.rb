@@ -8,7 +8,6 @@ end
 
 bash "install_boto" do
 	user "root"
-	cwd app_dir
 	code <<-EOH
 	pip install boto
 	EOH
