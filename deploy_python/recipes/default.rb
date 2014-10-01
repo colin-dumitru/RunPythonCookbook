@@ -5,7 +5,6 @@ node[:deploy].each do |application, deploy_config|
 	git app_dir  do
 		repository deploy_config[:scm][:repository]
 		action :sync
-		notifies :run, "bash[compile_app_name]"
 	end
 
 	bash "run_app" do
