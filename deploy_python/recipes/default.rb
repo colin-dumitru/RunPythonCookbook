@@ -5,7 +5,6 @@ node[:deploy].each do |application, deploy_config|
 	file "/tmp/ssh/#{deploy_config[:application]}.pem" do
 		content deploy_config[:scm][:ssh_key]
 		owner 'root'
-		group 'group'
 		mode '640'
 	end
 
@@ -16,7 +15,6 @@ node[:deploy].each do |application, deploy_config|
  		EOH
 
 		owner 'root'
-		group 'group'
 		mode '700'
 	end	 
 
