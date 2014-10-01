@@ -2,6 +2,12 @@ node[:deploy].each do |application, deploy_config|
 
 	app_dir = "/opt/#{deploy_config[:application]}"
 
+	directory "/tmp/ssh" do
+		owner 'root'
+		mode '0644'
+		action :create
+	end
+
 	file "/tmp/ssh/#{deploy_config[:application]}.pem" do
 		content deploy_config[:scm][:ssh_key]
 		owner 'root'
